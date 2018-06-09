@@ -1,9 +1,9 @@
 <?php if ( ! defined( 'FW' ) )  { die( 'Forbidden' ); }
 
-class FW_Extension_Yourextension extends FW_Extension {
+class FW_Extension_Lastimosa_Team_Member extends FW_Extension {
 
-    private $post_type = 'yourposttype';
-    private $slug = 'yourslug';
+    private $post_type = 'team-member';
+    private $slug = 'team-member';
 
     /**
      * @internal
@@ -20,7 +20,7 @@ class FW_Extension_Yourextension extends FW_Extension {
     }
 
     private function define_slugs() {
-        $this->slug = apply_filters( 'fw_ext_yourextension_post_slug', $this->slug );
+        $this->slug = apply_filters( 'fw_ext_lastimosa_team_member_post_slug', $this->slug );
     }
 
     public function add_admin_actions() {
@@ -85,28 +85,28 @@ class FW_Extension_Yourextension extends FW_Extension {
     public function _action_register_post_type() {
 
         $post_names = apply_filters( 'fw_ext_sliders_post_type_name', array(
-            'singular' => __( 'YOUR POST TYPE SINGULAR', 'fw' ),
-            'plural'   => __( 'YOUR POST TYPE PLURAL', 'fw' )
+            'singular' => __( 'Team Member', 'lastimosa' ),
+            'plural'   => __( 'Team Members', 'lastimosa' )
         ) );
 
         register_post_type( $this->post_type, array(
             'labels'             => array(
-                'name'               => $post_names['plural'], //__( 'Portfolio', 'fw' ),
-                'singular_name'      => $post_names['singular'], //__( 'Portfolio project', 'fw' ),
-                'add_new'            => __( 'Add New', 'fw' ),
-                'add_new_item'       => sprintf( __( 'Add New %s', 'fw' ), $post_names['singular'] ),
-                'edit'               => __( 'Edit', 'fw' ),
-                'edit_item'          => sprintf( __( 'Edit %s', 'fw' ), $post_names['singular'] ),
-                'new_item'           => sprintf( __( 'New %s', 'fw' ), $post_names['singular'] ),
-                'all_items'          => sprintf( __( 'All %s', 'fw' ), $post_names['plural'] ),
-                'view'               => sprintf( __( 'View %s', 'fw' ), $post_names['singular'] ),
-                'view_item'          => sprintf( __( 'View %s', 'fw' ), $post_names['singular'] ),
-                'search_items'       => sprintf( __( 'Search %s', 'fw' ), $post_names['plural'] ),
-                'not_found'          => sprintf( __( 'No %s Found', 'fw' ), $post_names['plural'] ),
-                'not_found_in_trash' => sprintf( __( 'No %s Found In Trash', 'fw' ), $post_names['plural'] ),
+                'name'               => $post_names['plural'], //__( 'Portfolio', 'lastimosa' ),
+                'singular_name'      => $post_names['singular'], //__( 'Portfolio project', 'lastimosa' ),
+                'add_new'            => __( 'Add New', 'lastimosa' ),
+                'add_new_item'       => sprintf( __( 'Add New %s', 'lastimosa' ), $post_names['singular'] ),
+                'edit'               => __( 'Edit', 'lastimosa' ),
+                'edit_item'          => sprintf( __( 'Edit %s', 'lastimosa' ), $post_names['singular'] ),
+                'new_item'           => sprintf( __( 'New %s', 'lastimosa' ), $post_names['singular'] ),
+                'all_items'          => sprintf( __( 'All %s', 'lastimosa' ), $post_names['plural'] ),
+                'view'               => sprintf( __( 'View %s', 'lastimosa' ), $post_names['singular'] ),
+                'view_item'          => sprintf( __( 'View %s', 'lastimosa' ), $post_names['singular'] ),
+                'search_items'       => sprintf( __( 'Search %s', 'lastimosa' ), $post_names['plural'] ),
+                'not_found'          => sprintf( __( 'No %s Found', 'lastimosa' ), $post_names['plural'] ),
+                'not_found_in_trash' => sprintf( __( 'No %s Found In Trash', 'lastimosa' ), $post_names['plural'] ),
                 'parent_item_colon'  => '' /* text for parent types */
             ),
-            'description'        => __( 'Create a POST TYPE SINGULAR', 'fw' ),
+            'description'        => __( 'Create a POST TYPE SINGULAR', 'lastimosa' ),
             'public'             => true,
             'show_ui'            => true,
             'show_in_menu'       => true,
@@ -171,7 +171,7 @@ class FW_Extension_Yourextension extends FW_Extension {
 
         foreach ( $menu as $key => $menu_item ) {
             if ( $menu_item[2] == 'edit.php?post_type=' . $this->post_type ) {
-                $menu[ $key ][0] = __( 'YOUR EXTENSION NAME', 'fw' );
+                $menu[ $key ][0] = __( 'Team Member', 'lastimosa' );
             }
         }
     }
