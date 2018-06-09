@@ -1,2 +1,2 @@
 # Unyson-Team-Member
-Team Member Extension for Unyson
+A WordPress plugin that adds a Team Member post type and shortcode for Unyson Framework.
